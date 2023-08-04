@@ -154,13 +154,13 @@ def initialize_globals(args):
 
     print(f"determined model type: {model_type_tmp}")        
 
-    device = "cpu"
-    if args.mode_cpu or args.mode_cpu_gptq:
-        device = "cpu"
-    elif args.mode_mps or args.mode_mps_gptq:
-        device = "mps"
-    else:
-        device = "cuda"
+    device = "cuda"
+    # if args.mode_cpu or args.mode_cpu_gptq:
+    #     device = "cpu"
+    # elif args.mode_mps or args.mode_mps_gptq:
+    #     device = "mps"
+    # else:
+    #     device = "cuda"
     
     try:
         if model is not None:

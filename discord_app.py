@@ -210,8 +210,10 @@ def discord_main(args):
     selected_model_info = model_info[model_name]
     
     tmp_args = types.SimpleNamespace()
-    tmp_args.base_url = selected_model_info['hub(base)']
+    tmp_args.base_url = selected_model_info['hub(gptq)']
     tmp_args.ft_ckpt_url = selected_model_info['hub(ckpt)']
+    tmp_args.gptq_url = selected_model_info['hub(gptq)']
+    tmp_args.gptq_base_url = selected_model_info['hub(gptq_base)']
     tmp_args.gen_config_path = selected_model_info['default_gen_config']
     tmp_args.gen_config_summarization_path = selected_model_info['default_gen_config']
     tmp_args.force_download_ckpt = False
@@ -221,6 +223,9 @@ def discord_main(args):
     tmp_args.mode_mps = args.mode_mps
     tmp_args.mode_8bit = args.mode_8bit
     tmp_args.mode_4bit = args.mode_4bit
+    tmp_args.mode_gptq = True
+    tmp_args.mode_mps_gptq = False
+    tmp_args.mode_cpu_gptq = False
     tmp_args.mode_full_gpu = args.mode_full_gpu
     tmp_args.local_files_only = args.local_files_only
     

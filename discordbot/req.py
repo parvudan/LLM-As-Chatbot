@@ -72,6 +72,8 @@ async def build_prompt(ppmanager, ctx_include=True, win_size=3):
         dummy_ppm.ctx = ""
     
     lws = CtxLastWindowStrategy(win_size)
+    print(dummy_ppm.ctx)
+    print(lws(dummy_ppm))
     return lws(dummy_ppm)
 
 async def build_ppm(msg, msg_content, username, user_id):
